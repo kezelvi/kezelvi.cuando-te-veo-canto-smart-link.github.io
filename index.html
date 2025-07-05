@@ -15,6 +15,16 @@
         .aspect-square {
             aspect-ratio: 1 / 1;
         }
+        /* Estilo para el icono PNG de Spotify en las redes sociales */
+        .spotify-social-icon img {
+            /* Filtro para cambiar el color del PNG a un gris similar al de los otros iconos */
+            filter: brightness(0) invert(0.7);
+            transition: filter 0.2s ease-in-out;
+        }
+        /* Al pasar el mouse, el ícono se vuelve blanco */
+        .spotify-social-icon:hover img {
+            filter: brightness(0) invert(1);
+        }
     </style>
 </head>
 <body class="bg-teal-500 min-h-screen flex flex-col items-center justify-center p-4">
@@ -125,7 +135,7 @@
                 <!-- Claro Música -->
                 <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
                     <div class="flex items-center">
-                        <img src="https://play-lh.googleusercontent.com/C2PEuU6eLQKocGZAJM5DE2KFgM9lnDrzTDKKK4qEbuI_J-M0-k4qZ05JjRfEsYvTFg" alt="Claro Música Logo" class="w-10 h-10 mr-4 object-contain">
+                        <img src="https://static.wikia.nocookie.net/logopedia/images/5/55/ClaroM%C3%BAsicaTV.png/revision/latest" alt="Claro Música Logo" class="w-10 h-10 mr-4 object-contain">
                         <span class="text-gray-700 font-medium">Claro Música</span>
                     </div>
                     <a href="https://www.claromusica.com/album/26468242/" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
@@ -136,7 +146,7 @@
                 <!-- SoundCloud -->
                 <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
                     <div class="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Antu_soundcloud.svg/2048px-Antu_soundcloud.svg.png" alt="SoundCloud Logo" class="w-10 h-10 mr-4 object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/de/thumb/f/f4/SoundCloud_-_Logo.svg/2560px-SoundCloud_-_Logo.svg.png" alt="SoundCloud Logo" class="w-10 h-10 mr-4 object-contain">
                         <span class="text-gray-700 font-medium">SoundCloud</span>
                     </div>
                     <a href="https://soundcloud.com/kezel-vi/cuando-te-veo-canto" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
@@ -161,14 +171,15 @@
                 <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
             <!-- Spotify Artist -->
-            <a href="https://open.spotify.com/intl-es/artist/4mDL3loGCnXh9V4sxLYjHq" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Spotify Artist Profile">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 496 512"><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zM378.3 323.8c-2.4 3.6-7.2 4.8-10.8 2.4-28.8-17.4-64.8-21.6-109.2-12-4.2 .9-8.4-1.8-9.3-6s1.8-8.4 6-9.3c48-10.2 87.6-5.4 119.4 14.4c3.6 2.4 4.8 7.2 2.4 10.8zm12-48.6c-3 4.2-8.4 5.4-12.6 2.4-31.2-18.6-79.2-24-123.6-13.2-5.4 1.2-10.8-1.8-12-7.2s1.8-10.8 7.2-12c49.2-10.8 102-6 138.6 16.2c4.2 2.4 5.4 7.8 2.4 12.6zm.6-43.8c-3.6 4.8-9.6 6-14.4 2.4-36.6-21.6-97.2-26.4-142.8-14.4-6 .6-12-3-12.6-9s3-12 9-12.6c51-12 116.4-7.2 157.8 18.6c4.8 3.6 6 9.6 2.4 14.4z"/></svg>
+            <a href="https://open.spotify.com/intl-es/artist/4mDL3loGCnXh9V4sxLYjHq" target="_blank" class="spotify-social-icon" aria-label="Spotify Artist Profile">
+                <img class="w-8 h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2000px-Spotify_logo_without_text.svg.png" alt="Spotify Artist Profile">
             </a>
         </div>
     </div>
 
     <!-- Elemento de audio para la previsualización -->
-    <audio id="audio-preview" src="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/6a76ed7de782e480584f19ed0878f0b4192605af/ctvc%20preview.mp3?raw=true"></audio>
+    <!-- CORRECCIÓN: Se usa la URL del archivo "raw" (crudo) para que el navegador pueda reproducir el audio directamente. -->
+    <audio id="audio-preview" src="https://raw.githubusercontent.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/main/ctvc%20preview.mp3" crossorigin="anonymous"></audio>
 
     <script>
         // --- Lógica para el reproductor de audio ---
