@@ -4,23 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuando Te Veo Canto - Kezelvi</title>
+
+    <!-- INICIO: Etiquetas Open Graph para previsualización en redes sociales -->
+    <meta property="og:url" content="https://kezelvi.github.io/cuando.te.veo.canto.smart-link/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cuando Te Veo Canto - Kezelvi" />
+    <meta property="og:description" content="Escucha el nuevo sencillo de Kezelvi en tu plataforma de música preferida." />
+    <meta property="og:image" content="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/main/Cuando%20te%20veo%20canto%20Album%20Cover.png?raw=true" />
+
+    <!-- Etiquetas para Twitter Card (opcional pero recomendado) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cuando Te Veo Canto - Kezelvi">
+    <meta name="twitter:description" content="Escucha el nuevo sencillo de Kezelvi en tu plataforma de música preferida.">
+    <meta name="twitter:image" content="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/main/Cuando%20te%20veo%20canto%20Album%20Cover.png?raw=true">
+    <!-- FIN: Etiquetas Open Graph -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Definición de la fuente personalizada */
+        @font-face {
+          font-family: 'Crayon';
+          /* Se usa la URL del archivo "raw" (crudo) para que el navegador pueda acceder directamente a la fuente */
+          src: url('https://raw.githubusercontent.com/kezelvi/cuando.te.veo.canto.smart-link/5d632a2fc78bd7337e885ce6c343e133ca0e795b/CRAYON.TTF') format('truetype');
+        }
+
         body {
             font-family: 'Inter', sans-serif;
         }
+
+        /* Clase para aplicar la fuente Crayon */
+        .font-crayon {
+            font-family: 'Crayon', sans-serif;
+        }
+
         .aspect-square {
             aspect-ratio: 1 / 1;
         }
+        
         /* Estilo para el icono PNG de Spotify en las redes sociales */
         .spotify-social-icon img {
-            /* Filtro para cambiar el color del PNG a un gris similar al de los otros iconos */
             filter: brightness(0) invert(0.7);
             transition: filter 0.2s ease-in-out;
         }
+        
         /* Al pasar el mouse, el ícono se vuelve blanco */
         .spotify-social-icon:hover img {
             filter: brightness(0) invert(1);
@@ -52,7 +81,7 @@
 
         <!-- Sección de enlaces a plataformas -->
         <div class="p-6 bg-gray-100">
-            <h2 class="text-lg font-semibold text-gray-800 mb-4 text-center">Elige tu servicio de música preferido</h2>
+            <h2 class="font-crayon text-3xl text-gray-800 mb-4 text-center tracking-wide">Elige tu servicio de música preferido</h2>
 
             <div class="space-y-4">
                 <!-- Spotify -->
@@ -180,8 +209,18 @@
     <!-- INICIO: Nueva Sección de Videos de YouTube -->
     <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-md w-full mt-6">
         <div class="p-6">
-            <h2 class="text-lg font-semibold text-gray-800 mb-4 text-center">Otras Versiones</h2>
+            <h2 class="font-crayon text-3xl text-gray-800 mb-4 text-center tracking-wide">Otras Versiones</h2>
             <div class="flex flex-col space-y-4">
+
+                <!-- Nuevo Video -->
+                <a href="https://youtu.be/EBAAnY_f5hs?si=dK2OY2EIONGNH2O-" target="_blank" class="block group">
+                    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://img.youtube.com/vi/EBAAnY_f5hs/maxresdefault.jpg" alt="Miniatura del video Visualizer" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </a>
                 
                 <!-- Video Instrumental -->
                 <a href="https://youtu.be/w0-SEpoWOr8?si=AvdfTw_emE99OjrI" target="_blank" class="block group">
@@ -219,7 +258,6 @@
     <!-- FIN: Nueva Sección de Videos de YouTube -->
 
     <!-- Elemento de audio para la previsualización -->
-    <!-- CORRECCIÓN: Se usa la URL del archivo "raw" (crudo) para que el navegador pueda reproducir el audio directamente. -->
     <audio id="audio-preview" src="https://raw.githubusercontent.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/main/ctvc%20preview.mp3" crossorigin="anonymous"></audio>
 
     <script>
