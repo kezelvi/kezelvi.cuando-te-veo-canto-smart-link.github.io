@@ -12,9 +12,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        .text-shadow-lg {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
         .aspect-square {
             aspect-ratio: 1 / 1;
         }
@@ -27,17 +24,19 @@
 
         <!-- Sección de la portada del álbum -->
         <div class="relative w-full aspect-square">
+            <!-- Imagen de portada -->
             <img src="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/main/Cuando%20te%20veo%20canto%20Album%20Cover.png?raw=true" alt="Portada del álbum Cuando te veo canto" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-40"></div>
+            
+            <!-- Contenido superpuesto: solo el botón de play -->
             <div class="relative h-full flex flex-col items-center justify-center text-white p-4">
-                <h1 class="text-4xl font-bold mb-2 text-shadow-lg text-center">Cuando te veo canto</h1>
-                <div class="cursor-pointer my-4">
+                <!-- Botón de Play/Pausa con ID para controlarlo con JavaScript -->
+                <div id="play-pause-btn" class="cursor-pointer my-4">
                     <svg class="w-20 h-20 text-white opacity-90 hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="rgba(0,0,0,0.4)"/>
-                        <path d="M9.5 16.5l7-4.5-7-4.5v9z"/>
+                        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" fill="rgba(0,0,0,0.5)"/>
+                        <!-- El ícono (path) también tiene un ID para poder cambiar entre play y pausa -->
+                        <path id="play-pause-icon" d="M9.5 16.5l7-4.5-7-4.5v9z"/>
                     </svg>
                 </div>
-                <p class="absolute bottom-4 right-4 text-lg font-semibold text-shadow-lg">Kezelvi</p>
             </div>
         </div>
 
@@ -82,7 +81,7 @@
                 <!-- TikTok -->
                 <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
                     <div class="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/TikTok_logo_2021.svg/1200px-TikTok_logo_2021.svg.png" alt="TikTok Logo" class="w-10 h-10 mr-4 object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ionicons_logo-tiktok.svg/1024px-Ionicons_logo-tiktok.svg.png" alt="TikTok Logo" class="w-10 h-10 mr-4 object-contain">
                         <span class="text-gray-700 font-medium">TikTok</span>
                     </div>
                     <a href="https://www.tiktok.com/music/Cuando-Te-Veo-Canto-7087026521105238018" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
@@ -93,7 +92,7 @@
                 <!-- Deezer -->
                 <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
                     <div class="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deezer_logo.svg/1200px-Deezer_logo.svg.png" alt="Deezer Logo" class="w-10 h-10 mr-4 object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Deezer_New_Icon.svg/1200px-Deezer_New_Icon.svg.png" alt="Deezer Logo" class="w-10 h-10 mr-4 object-contain">
                         <span class="text-gray-700 font-medium">Deezer</span>
                     </div>
                     <a href="https://link.deezer.com/s/30nQJkpkRpuvJnYJcid3T" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
@@ -104,7 +103,7 @@
                 <!-- Amazon Music -->
                 <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
                     <div class="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Amazon_Music_logo.svg/1024px-Amazon_Music_logo.svg.png" alt="Amazon Music Logo" class="w-10 h-10 mr-4 object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Amazon_Music_logo.svg/2560px-Amazon_Music_logo.svg.png" alt="Amazon Music Logo" class="w-10 h-10 mr-4 object-contain">
                         <span class="text-gray-700 font-medium">Amazon Music</span>
                     </div>
                     <a href="https://music.amazon.com/albums/B09XWLJ1DS?marketplaceId=ART4WZ8MWBX2Y&music" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
@@ -115,7 +114,7 @@
                 <!-- Tidal -->
                 <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
                     <div class="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Tidal_logo.svg/1200px-Tidal_logo.svg.png" alt="Tidal Logo" class="w-10 h-10 mr-4 object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Tidal_%28service%29_logo_only.svg/2048px-Tidal_%28service%29_logo_only.svg.png" alt="Tidal Logo" class="w-10 h-10 mr-4 object-contain">
                         <span class="text-gray-700 font-medium">Tidal</span>
                     </div>
                     <a href="https://tidal.com/browse/album/224848433" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
@@ -126,7 +125,7 @@
                 <!-- Claro Música -->
                 <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
                     <div class="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Claro_m%C3%BAsica_logo.svg/2560px-Claro_m%C3%BAsica_logo.svg.png" alt="Claro Música Logo" class="w-10 h-10 mr-4 object-contain">
+                        <img src="https://play-lh.googleusercontent.com/C2PEuU6eLQKocGZAJM5DE2KFgM9lnDrzTDKKK4qEbuI_J-M0-k4qZ05JjRfEsYvTFg" alt="Claro Música Logo" class="w-10 h-10 mr-4 object-contain">
                         <span class="text-gray-700 font-medium">Claro Música</span>
                     </div>
                     <a href="https://www.claromusica.com/album/26468242/" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
@@ -155,7 +154,7 @@
             </a>
             <!-- Instagram -->
             <a href="https://www.instagram.com/kezelvi/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 16a6 6 0 100-12 6 6 0 000 12zm-3-6a3 3 0 116 0 3 3 0 01-6 0zm10-4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
             </a>
             <!-- X (Twitter) -->
             <a href="https://x.com/KezelVi" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="X">
@@ -163,10 +162,45 @@
             </a>
             <!-- Spotify Artist -->
             <a href="https://open.spotify.com/intl-es/artist/4mDL3loGCnXh9V4sxLYjHq" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Spotify Artist Profile">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.183 14.225c-.24.398-.756.52-1.154.282l-2.515-1.528a.738.738 0 0 1-.34-.63v-4.14c0-.305.18-.58.456-.71l2.58-1.23c.398-.19.88.05.97.48s-.19.88-.588.97l-2.14.96v3.62l2.14 1.3c.398.24.52.756.282 1.154zm-8.366 0c-.24.398-.756.52-1.154.282l-2.515-1.528a.738.738 0 0 1-.34-.63v-4.14c0-.305.18-.58.456-.71l2.58-1.23c.398-.19.88.05.97.48s-.19.88-.588.97l-2.14.96v3.62l2.14 1.3c.398.24.52.756.282 1.154z"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 496 512"><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zM378.3 323.8c-2.4 3.6-7.2 4.8-10.8 2.4-28.8-17.4-64.8-21.6-109.2-12-4.2 .9-8.4-1.8-9.3-6s1.8-8.4 6-9.3c48-10.2 87.6-5.4 119.4 14.4c3.6 2.4 4.8 7.2 2.4 10.8zm12-48.6c-3 4.2-8.4 5.4-12.6 2.4-31.2-18.6-79.2-24-123.6-13.2-5.4 1.2-10.8-1.8-12-7.2s1.8-10.8 7.2-12c49.2-10.8 102-6 138.6 16.2c4.2 2.4 5.4 7.8 2.4 12.6zm.6-43.8c-3.6 4.8-9.6 6-14.4 2.4-36.6-21.6-97.2-26.4-142.8-14.4-6 .6-12-3-12.6-9s3-12 9-12.6c51-12 116.4-7.2 157.8 18.6c4.8 3.6 6 9.6 2.4 14.4z"/></svg>
             </a>
         </div>
     </div>
+
+    <!-- Elemento de audio para la previsualización -->
+    <audio id="audio-preview" src="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/6a76ed7de782e480584f19ed0878f0b4192605af/ctvc%20preview.mp3?raw=true"></audio>
+
+    <script>
+        // --- Lógica para el reproductor de audio ---
+        
+        // Obtener los elementos del DOM
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+        const audio = document.getElementById('audio-preview');
+
+        // Definir las formas de los íconos de play y pausa
+        const playIconPath = "M9.5 16.5l7-4.5-7-4.5v9z";
+        const pauseIconPath = "M8 7h3v10H8zm5 0h3v10h-3z";
+
+        // Función para controlar la reproducción
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.setAttribute('d', pauseIconPath);
+            } else {
+                audio.pause();
+                playPauseIcon.setAttribute('d', playIconPath);
+            }
+        }
+
+        // Agregar el evento de clic al botón
+        playPauseBtn.addEventListener('click', togglePlayPause);
+
+        // Cuando el audio termine, volver a poner el ícono de play
+        audio.addEventListener('ended', () => {
+            playPauseIcon.setAttribute('d', playIconPath);
+        });
+    </script>
 
 </body>
 </html>
